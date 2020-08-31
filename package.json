@@ -8,7 +8,9 @@
     "test": "npm run eslint && npm run test.jest",
     "build": "webpack --mode production",
     "start": "webpack-dev-server",
-    "test.jest": "jest"
+    "test.jest": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@babel/core": "7.10.2",
@@ -39,6 +41,7 @@
   "dependencies": {
     "@types/jest": "^26.0.10",
     "axios": "0.19.2",
+    "gh-pages": "^3.1.0",
     "history": "5.0.0",
     "prop-types": "15.7.2",
     "react": "16.13.1",
