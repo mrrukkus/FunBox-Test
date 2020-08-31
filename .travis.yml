@@ -1,7 +1,17 @@
 language: node_js
-
 node_js:
-  - "10"
-
+  - "stable"
 notifications:
   email: false
+cache:
+  directories:
+  - node_modules
+script:
+  - echo "skipping test"
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: build
+  on:
+    branch: master

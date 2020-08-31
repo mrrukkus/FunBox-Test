@@ -2,6 +2,7 @@
   "name": "test",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://mrrukkus.github.io/FunBox-Test/",
   "scripts": {
     "eslint": "eslint --ext .jsx --ext .js src/",
     "test": "npm run eslint && npm run test.jest",
