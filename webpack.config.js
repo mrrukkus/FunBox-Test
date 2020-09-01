@@ -1,14 +1,14 @@
 const path = require(`path`);
 
 module.exports = {
-  entry: `./src/index.tsx`,
+  entry: [`@babel/polyfill`, `./src/index.tsx`],
   output: {
     filename: `bundle.js`,
     publicPath: `/`,
-    path: path.join(__dirname, `public`)
+    path: path.join(__dirname, `build`)
   },
   devServer: {
-    contentBase: path.join(__dirname, `public`),
+    contentBase: path.join(__dirname, `build`),
     open: true,
     inline: true,
     port: 1337,
