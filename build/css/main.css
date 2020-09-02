@@ -115,6 +115,7 @@ body {
 }
 
 .catalog-card__additional-information {
+  width: 177px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
