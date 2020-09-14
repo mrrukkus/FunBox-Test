@@ -1,0 +1,298 @@
+@font-face {
+  font-family: "Exo2.0";
+  src: url("../fonts/Exo2Thin.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.5)), color-stop(50%, rgba(0,0,0,0)), color-stop(50%, rgba(0,0,0,0)), to(rgba(0,0,0,0.5))), url("../img/background.jpg");
+  background: -o-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%), url("../img/background.jpg");
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%), url("../img/background.jpg");
+}
+
+.main__title {
+  color: white;
+  font-size: 36px;
+  margin: 20px auto;
+  font-weight: normal;
+  text-align: center;
+  font-family: "Exo2.0";
+}
+
+.catalog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.catalog-card {
+  width: 320px;
+  margin: 0 auto 20px;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.catalog-card__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 21px 47px;
+  margin-bottom: 14px;
+  min-height: 434px;
+  background-color: #fff;
+  position: relative;
+  border-right: 4px solid #1698d9;
+  border-bottom: 4px solid #1698d9;
+  border-radius: 12px;
+  position: relative;
+  background: url(../img/cat.png) no-repeat -23px 207px, linear-gradient(135deg, transparent 30px, #1698d9 30px, #1698d9 34px, #f2f2f2 34px);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.catalog-card__container::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  bottom: -5px;
+  width: 8px;
+  height: calc(100% - 44px);
+  border-left: 5px solid #1698d9;
+  border-bottom: 5px solid #1698d9;
+  border-bottom-left-radius: 12px;
+}
+
+.catalog-card__container::after {
+  content: "";
+  position: absolute;
+  right: -4px;
+  top: 0px;
+  width: 272px;
+  height: 8px;
+  border-top: 4px solid #1698d9;
+  border-right: 4px solid #1698d9;
+  border-top-right-radius: 12px;
+}
+
+.catalog-card__product,
+.catalog-card__capacity,
+.catalog-card__present {
+  color: #666666;
+}
+
+.catalog-card__product--not-approved {
+  color: #E52E7A;
+}
+
+.catalog-card__product-title {
+  margin-top: 5px;
+  margin-bottom: 18px;
+}
+
+.catalog-card__brand {
+  font-size: 48px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 57px;
+}
+
+.catalog-card__taste {
+  margin: 0;
+  font-size: 24px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+.catalog-card__additional-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 15px;
+}
+
+.catalog-card__product-weight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: white;
+  background-color: #1698d9;
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+}
+
+.catalog-card__weight {
+  font-size: 45px;
+  margin-top: 6px;
+  line-height: 39px;  
+}
+
+.catalog-card__notification {
+  color: white;
+  font-size: 13px;
+  text-align: center;
+}
+
+.catalog-card__buy {
+  color: #107cb2;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  border-bottom: 1px dashed #107cb2;
+}
+
+/* Cтили для выбранной карточки */
+
+.catalog-card--chosen .catalog-card__container {
+  border-right: 4px solid #D91667;
+  border-bottom: 4px solid #D91667;
+  background: url(../img/cat.png) no-repeat -23px 207px, linear-gradient(135deg, transparent 30px, #D91667 30px, #D91667 34px, #f2f2f2 34px);
+}
+
+.catalog-card--chosen .catalog-card__container::after {
+  border-top: 4px solid #D91667;
+  border-right: 4px solid #D91667;
+}
+
+.catalog-card--chosen .catalog-card__container::before {
+  border-left: 5px solid #D91667;
+  border-bottom: 5px solid #D91667;
+}
+
+.catalog-card--chosen .catalog-card__product-weight {
+  background-color: #D91667;
+}
+
+/* Cтили для карточки отсутствующего товара */
+
+.catalog-card--out-of-stock .catalog-card__notification {
+  color: #ffff66;
+}
+
+.catalog-card--out-of-stock .catalog-card__container {
+  border-right: 4px solid #b3b3b3;
+  border-bottom: 4px solid #b3b3b3;
+  background: url(../img/cat-out-of-stock.png) no-repeat -23px 207px, linear-gradient(135deg, transparent 30px, #b3b3b3 30px, #b3b3b3 34px, #f2f2f2 34px);
+  cursor: auto;
+}
+
+.catalog-card--out-of-stock .catalog-card__container::after {
+  border-top: 4px solid #b3b3b3;
+  border-right: 4px solid #b3b3b3;
+}
+
+.catalog-card--out-of-stock .catalog-card__container::before {
+  border-left: 5px solid #b3b3b3;
+  border-bottom: 5px solid #b3b3b3;
+}
+
+.catalog-card--out-of-stock .catalog-card__product,
+.catalog-card--out-of-stock .catalog-card__brand,
+.catalog-card--out-of-stock .catalog-card__taste,
+.catalog-card--out-of-stock .catalog-card__additional-information {
+  color: #b3b3b3;
+  opacity: 0.5;
+}
+
+.catalog-card--out-of-stock .catalog-card__product-weight {
+  background-color: #b3b3b3;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .catalog-card__container {
+    background: url(../img/cat@2x.png) no-repeat -23px 207px / 368px 360px, linear-gradient(135deg, transparent 30px, #1698d9 30px, #1698d9 34px, #f2f2f2 34px);
+  }
+
+  .catalog-card--chosen .catalog-card__container {
+    background: url(../img/cat@2x.png) no-repeat -23px 207px / 368px 360px, linear-gradient(135deg, transparent 30px, #D91667 30px, #D91667 34px, #f2f2f2 34px);
+  }
+
+  .catalog-card--out-of-stock .catalog-card__container {
+    background: url(../img/cat-out-of-stock@2x.png) no-repeat -23px 207px / 368px 360px, linear-gradient(135deg, transparent 30px, #b3b3b3 30px, #b3b3b3 34px, #f2f2f2 34px);
+  }
+}
+
+/*свойства для планшетной версии*/
+@media (min-width: 768px) {
+  .catalog {
+    width: 760px;
+    margin: 0 auto;
+  }
+
+  .main__title {
+    margin-bottom: 23px;
+  }
+
+  .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .catalog {
+    min-width: 700px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+
+  .catalog-card {
+    margin: 0 30px 20px;
+  }
+}
+
+/*свойства для десктопной версии*/
+@media (min-width: 1280px) {
+  .main {
+    height: 100vh;
+  }
+
+  .catalog {
+    width: 1200px;
+    min-width: 960px;
+    padding: 0 40px;
+  }
+
+  .catalog-card {
+    margin: 0 40px 20px;
+  }
+}
